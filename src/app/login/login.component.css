@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+  width: 100%;
+  overflow: hidden;
+
+
+  --m: 4rem;
+      
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+}
+.ring {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transition: 0.5s;
+}
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.login {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.login h4 {
+  font-size: 2em;
+  color: #fff;
+  font-family: "Sofia", sans-serif;
+}
+.login .inputBx {
+  position: relative;
+  width: 100%;
+  display: flex; 
+  justify-content: center; 
+  flex-direction: column; 
+  align-items: center; 
+}
+.login .inputBx input {
+  position: relative;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: none;
+  outline: none;
+}
+.login .inputBx input[type="button"] {
+  width: 100px;
+  height: 20px;
+  background: #0078ff;
+  background: linear-gradient(45deg, #ff357a, #fff172);
+  border: none;
+  cursor: pointer;
+  font-size:  1px;
+}
+.login .inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.login .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.login .links a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Sofia", sans-serif;
+
+}
+
+
+button {
+    border: calc(0.08 * var(--m)) solid transparent;
+    position: relative;
+    color: #F3F3F3;
+    font-family: "Sofia", sans-serif;
+    font-size: 25px;
+    border-radius: calc(0.7 * var(--m));
+    padding: calc(0.3* var(--m)) calc(1 * var(--m));
+    display: flex;
+    justify-content: center;
+    cursor: pointer;      
+    background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    background-origin: border-box;
+    background-clip: padding-box, border-box, border-box;
+    background-size: 200%;
+     animation: animate3 2s infinite linear;
+    }
+    
+   button::before {
+      content: '';
+      background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+      height: 30%;
+      width: 60%;
+      position: absolute;
+      bottom: -20%;
+      z-index: -5;
+      background-size: 200%;
+      animation: animate3 2s infinite linear;
+      filter: blur(calc(0.8 * var(--m)));
+    }
+    
+    button:hover,button:hover::before {
+      animation: animate3 0.5s infinite linear;
+    }
+    
+    @keyframes animate3 {
+      0% {background-position: 0}
+      100% {background-position: 200%}
+    }
+    
+    @media screen and (max-width: 1000px) {
+      .parent {
+            --m: 2rem;
+      }
+    }
+
+.inputBx ::placeholder{
+    font-family: "Sofia", sans-serif;
+
+}
